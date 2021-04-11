@@ -1,0 +1,58 @@
+1.Pobieramy Debiana ze strony www.debian.org
+2.Uruchamiamy i konfigurujemy Virtualboxa
+- Tworzymy nowa maszyne wirtualna
+-Ustawiamy typ i wersje Linux i Debiana
+-Przypisujemy pamięc ram, dobrze, aby było to minimum 2 GB
+-Tworzymy wirtualny dysk VDI
+-Wybieramy dynamicznie przydzielany obraz
+-Nastepnie zakładka pamiec, ustawiamy bootowanie klikajac w "niebieska plyte", a nastepnie "choose a disk file"
+3.Uruchomienie i konfiguracja maszyny wirtualnej
+-Uruchomic maszyne mozemy za pomoca zielonej strzalki
+-Ustawiamy bootowanie na cd-ROM, ponieważ uruchamiamy z pliku ISO
+-Nastepnie wyswietli Nam sie "Debian Installer menu".Pojawiają sie tam opcje takie jak:
+Graphicall install: instalator w trybie graficznym
+Install: tryb tekstowy
+Advanced options: tryby przywracania systemu
+Accessible dark contrast menu installer: lepiej widoczny dla osób słabo widzących
+Install with speed synthesis:Instalator będzie dźwiękiem informował o opcjach zaznaczanych
+-Wybieramy: Install
+-Wybieramy język. Najlepiej jest wybrac angielski, poniewaz w tym jezyku najszybciej znajdziemy rozwiazanie problemu
+-Wybieramy region, z ktorego sie laczymy. Wybieramy Europe->Poland
+-Wybieramy znaki: United States en_US.UTF-8
+-Wybieramy klawiature: american english
+-Wciskamy klawisz enter i czekamy az system wczyta dane
+-Podajemy hostname/domene - zostawiamy puste okienko i wciskamy enter
+-Root password - dla bezpieczenstwa ustawiamy skomplikowane haslo, poniewaz uzytkownik root ma duze uprawnienia
+-Glowny uzytkownik - wpisujemy imie, nazwisko oraz login
+-Wybieramy nazwe uzytkownika
+-Tworzymy haslo dla uzytkownika
+-Następnie partycjonujemy dysk:
+Do wyboru mamy opcje takie jak:
+Guided - use entire disk (kreator,ktory skonfiguruje za nas)
+Guided - use entire disk and set up LVM (dynamiczno-logiczne zarzadzanie dyskami)
+Guided - use entire disk and set up encrypted LVM (to samo co wyzej, ale z szyfrowaniem danych)
+Manual - reczne partycyjonowanie.
+-Wybieramy manual
+-Wybieramy free space i create new partition
+-Podajemy rozmiar partycji (minus 2 GB)
+-Primary partition -> begining
+-Następnie bootable flag -> on
+-Tworzymy następną partycje
+-Rozmiar: 2GB
+- Wybieramy logical partition
+-Use as -> swap area
+- Wybieramy "done setting up the partition"
+-Aby zakonczyc partycjonowanie wybieramy "Finishing partitioning and write changes to disk"
+-Wybieramy yes w podsumowaniu
+-Scan another CD or DVD -> no
+-Wybieramy serwer, z ktorego bedziemy pobierac pakiety
+-Wybieramy poland, następnie ftp.tst.gda.pliku
+-Dalej nic nie wpisujemy i zatwierdzamy
+-Przez uzycie spacji zaznaczamy "ssh server" i "standard system"
+-Wybieramy gdzie zainstalowac system -> yes -> nasz dysk twardy
+-Klikamy continue
+-Po restarcie systemu wybieramy wciskamy ALT+F2, aby przelaczyc sie na konsole tekstowa
+-Logujemy sie na konto roota
+-Aktualizujemy pakiety poprzez uzycie komendy "apt-get update"
+-Wpisujac "exit" wylogujemy sie z roota
+
